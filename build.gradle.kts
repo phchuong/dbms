@@ -7,7 +7,7 @@ plugins {
 	kotlin("plugin.spring") version "1.3.72"
 }
 
-group = "io.pratik.elasticsearch"
+group = "io.demo.productsearchapp"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 

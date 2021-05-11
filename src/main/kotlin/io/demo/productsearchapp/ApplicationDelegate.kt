@@ -1,4 +1,4 @@
-package io.pratik.elasticsearch.productsearchapp
+package io.demo.productsearchapp
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -6,8 +6,8 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 
 @SpringBootApplication
 @EnableElasticsearchRepositories
-class ProductsearchappApplication
+class ApplicationDelegate
 
 fun main(args: Array<String>) {
-	runApplication<ProductsearchappApplication>(*args)
+	runApplication<ApplicationDelegate>(*args)
 }
