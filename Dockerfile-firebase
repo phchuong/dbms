@@ -1,0 +1,22 @@
+FROM node:boron-alpine
+
+USER root
+ENV FIREBASE_TOOLS_VERSION=6.5.0
+RUN yarn global add firebase-tools@${FIREBASE_TOOLS_VERSION} && \
+    yarn cache clean && \
+    firebase -V && \
+    mkdir $HOME/.cache
+
+RUN apk --no-cache add openjdk8-jre bash curl nginx openssl nginx gettext
+RUN firebase setup:emulators:database
+
+RUN mkdir -p /firebase
+RUN mkdir -p /run/nginx
+
+RUN echo '{}' > /firebase/firebase.json
+
+COPY ./scripts/serve.sh /firebase/serve.sh
+COPY nginx.conf.template /etc/nginx/
+RUN chmod +x /firebase/serve.sh
+
+ENTRYPOINT "/firebase/serve.sh"
