@@ -31,6 +31,8 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 	compileOnly("org.projectlombok:lombok")
 	compileClasspath("redis.clients:jedis:3.0.1")
 	compileClasspath("io.lettuce:lettuce-core:5.1.6.RELEASE")
